@@ -60,7 +60,6 @@ systemctl enable avahi-daemon
 systemctl enable tlp
 systemctl enable reflector.timer
 systemctl enable fstrim.timer
-systemctl enable libvirtd
 systemctl enable acpid
 
 ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
