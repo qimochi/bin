@@ -28,7 +28,7 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:password | chpasswd
 
-pacman -S grub efibootmgr arandr fish ffmpeg tumbler imagemagick maim htop thunar pkgfile ncmpcpp mpd mpc mpv neofetch polkit-gnome gnome-keyring noto-fonts-cjk noto-fonts-emoji ttf-font-awesome awesome-terminal-fonts playerctl scrot dunst pacman-contrib light-locker lightdm bspwm sxhkd firefox rxvt-unicode picom nitrogen lxappearance dmenu mtpfs git less intel-ucode android-udev networkmanager man-pages man-db network-manager-applet dialog wpa_supplicant mtools dosfstools reflector base-devel linux-lts-headers linux-lts avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh rsync reflector acpi acpi_call tlp virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset ufw blueman flatpak sof-firmware nss-mdns acpid os-prober ntfs-3g terminus-font vim ranger w3m
+pacman -S grub efibootmgr arandr fish ffmpeg tumbler imagemagick maim htop thunar pkgfile ncmpcpp mpd mpc mpv neofetch polkit-gnome gnome-keyring noto-fonts-cjk noto-fonts-emoji ttf-font-awesome awesome-terminal-fonts playerctl scrot dunst pacman-contrib light-locker lightdm bspwm sxhkd firefox rxvt-unicode picom nitrogen lxappearance dmenu mtpfs git less intel-ucode android-udev networkmanager man-pages man-db network-manager-applet dialog wpa_supplicant mtools dosfstools reflector avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh rsync reflector acpi acpi_call tlp ufw blueman flatpak sof-firmware acpid os-prober ntfs-3g terminus-font vim ranger w3m
 
 # add chaotic
 pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
@@ -113,11 +113,11 @@ fi" >> /home/sex/.bashrc
 pkgfile --update
 curl -L https://get.oh-my.fish | fish
 omf install archlinux bang-bang cd colorman sudope vcs bass pure
-echo "source /home/sex/.local/share/omf/pkg/colorman/init.fish" >> /home/sex/.config/fish/config.fish
+echo "source /root/.local/share/omf/pkg/colorman/init.fish" >> /home/sex/.config/fish/config.fish
 
 # add bullshit
-git clone https://aur.archlinux.org/aura-bin.git && cd aura-bin/ && makepkg && rm -rf aura-bin/ && cd ..
-aura -Ay upd72020x-fw wd719x-firmware aic94xx-firmware aura-git libxft-bgra rxvt-unicode-truecolor-wide-glyphs thinkfan --removemake
-aura -Ay gtk3-nocsd-git
+# git clone https://aur.archlinux.org/aura-bin.git && cd aura-bin/ && makepkg && rm -rf aura-bin/ && cd ..
+# aura -Ay upd72020x-fw wd719x-firmware aic94xx-firmware aura-git libxft-bgra rxvt-unicode-truecolor-wide-glyphs thinkfan --removemake
+# aura -Ay gtk3-nocsd-git
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
