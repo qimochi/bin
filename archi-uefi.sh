@@ -1,5 +1,18 @@
 #!/bin/bash
 
+loadkeys us
+timedatectl set-ntp true
+
+#partitions u need to do by manual before next step, make sure u mount everythin on proper place (SWAPON,/mnt/boot,/mnt,/mnt/home)
+#use lsblk, then cfdisk, then format those with mkfs
+
+#base
+pacstrap /mnt base base-devel linux-lts linux-firmware
+
+#chroot
+arch-chroot /mnt /bin/bash
+
+#things
 ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 hwclock --systohc
 sed -i '177s/.//' /etc/locale.gen
@@ -27,8 +40,14 @@ pacman -Syy
 # pacman -S --noconfirm xf86-video-intel
 # pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
 
+
+#uefi
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
+
+#bios
+#grub-install --target=i386-pc /dev/sdX #bootable partition
+#grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
 systemctl enable bluetooth
