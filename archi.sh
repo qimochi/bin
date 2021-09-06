@@ -119,4 +119,4 @@ curl -L https://get.oh-my.fish | fish
 pacman -S aura
 aura -Ay upd72020x-fw wd719x-firmware aic94xx-firmware aura-git libxft-bgra rxvt-unicode-truecolor-wide-glyphs thinkfan gtk3-nocsd-git
 
-printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
+printf "\e[1;32mDone! Type exit, umount -a and reboot, post installation u need to config fish, lightdm/xinit, and wm .\e[0m"
