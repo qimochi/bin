@@ -26,6 +26,9 @@ echo "arch" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
+
+# for adsblock https://github.com/StevenBlack/hosts
+
 echo root:password | chpasswd
 
 # default password is password
