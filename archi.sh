@@ -3,8 +3,8 @@
 loadkeys us
 timedatectl set-ntp true
 
-#partitions u need to do by manual before next step, make sure u mount everythin on proper place (SWAPON,/mnt/boot,/mnt,/mnt/home)
-#use lsblk, then cfdisk, then format those with mkfs
+# partitions u need to do by manual before next step, make sure u mount everythin on proper place (SWAPON,/mnt/boot,/mnt,/mnt/home)
+# use lsblk, then cfdisk, then format those with mkfs
 
 #base
 pacstrap /mnt base base-devel linux-lts linux-firmware
@@ -27,6 +27,8 @@ echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:password | chpasswd
+
+# default password is password
 
 pacman -S grub efibootmgr arandr fish ffmpeg tumbler imagemagick maim htop thunar pkgfile ncmpcpp mpd mpc mpv neofetch polkit-gnome gnome-keyring inter-font ttf-roboto noto-fonts-cjk noto-fonts-emoji ttf-font-awesome awesome-terminal-fonts playerctl scrot dunst pacman-contrib light-locker lightdm bspwm sxhkd firefox picom nitrogen lxappearance dmenu mtpfs git less intel-ucode android-udev networkmanager man-pages man-db network-manager-applet dialog wpa_supplicant mtools dosfstools reflector avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh rsync reflector acpi acpi_call tlp ufw blueman flatpak sof-firmware acpid os-prober ntfs-3g terminus-font vim ranger w3m cmake macchanger gucharmap
 
@@ -122,7 +124,9 @@ gsettings set org.blueman.plugins.powermanager auto-power-on false
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot, post installation u need to config fish, lightdm/xinit, and wm .\e[0m"
 
-# post installations
+##################################### post installations ###################################################################
+
+
 # sudo pacman -S aura
 # sudo pacman -S gtk3-nocsd-git polybar gksu octopi
 # sudo aura -Ay upd72020x-fw wd719x-firmware aic94xx-firmware libxft-bgra rxvt-unicode-truecolor-wide-glyphs i3lock-color-git lightdm-webkit2-theme-glorious python-ueberzug-git cwm
