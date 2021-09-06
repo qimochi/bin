@@ -112,8 +112,8 @@ then
 fi" >> /home/sex/.bashrc
 pkgfile --update
 curl -L https://get.oh-my.fish | fish
-omf install archlinux bang-bang cd colorman sudope vcs bass pure
-echo "source /root/.local/share/omf/pkg/colorman/init.fish" >> /home/sex/.config/fish/config.fish
+# omf install archlinux bang-bang cd colorman sudope vcs bass pure
+# echo "source /root/.local/share/omf/pkg/colorman/init.fish" >> /home/sex/.config/fish/config.fish
 
 # add bullshit
 pacman -S aura
