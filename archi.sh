@@ -104,7 +104,9 @@ echo sex:password | chpasswd
 usermod -aG storage,video,wheel,audio,input,power,rfkill sex 
 
 # add bullshit
-pacman -S aura thinkfan gtk3-nocsd-git polybar gksu octopi
+
+pacman -S aura
+pacman -S gtk3-nocsd-git polybar gksu octopi
 aura -Ay upd72020x-fw wd719x-firmware aic94xx-firmware libxft-bgra rxvt-unicode-truecolor-wide-glyphs i3lock-color-git lightdm-webkit2-theme-glorious python-ueberzug-git cwm
 
 git clone https://github.com/siduck76/st.git && cd st/ && make install && rm -rf st/ && cd ..
