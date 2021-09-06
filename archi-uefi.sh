@@ -100,20 +100,20 @@ echo "<?xml version="1.0"?>
 	</match>
 </fontconfig>" >> /etc/fonts/local.conf
 
-useradd -m sex
+useradd -m sex -s /bin/bash
 echo sex:password | chpasswd
-usermod -aG libvirt sex
+usermod -aG libvirt,storage,video,wheel,audio,input,power sex 
 
 echo "sex ALL=(ALL) ALL" >> /etc/sudoers.d/sex
 
 echo "if [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]]
 then
 	exec fish
-fi" >> ~/.bashrc
+fi" >> /home/sex/.bashrc
 pkgfile --update
 curl -L https://get.oh-my.fish | fish
 omf install archlinux bang-bang cd colorman sudope vcs bass pure
-echo "source ~/.local/share/omf/pkg/colorman/init.fish" >> ~/.config/fish/config.fish
+echo "source /home/sex/.local/share/omf/pkg/colorman/init.fish" >> /home/sex/.config/fish/config.fish
 
 # add bullshit
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin/ && makepkg -sri && rm -rf yay-bin/ && cd ..
