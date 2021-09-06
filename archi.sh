@@ -103,6 +103,16 @@ useradd -m sex -s /bin/bash
 echo sex:password | chpasswd
 usermod -aG storage,video,wheel,audio,input,power,rfkill sex 
 
+# add bullshit
+pacman -S aura thinkfan gtk3-nocsd-git polybar gksu octopi
+aura -Ay upd72020x-fw wd719x-firmware aic94xx-firmware libxft-bgra rxvt-unicode-truecolor-wide-glyphs i3lock-color-git lightdm-webkit2-theme-glorious python-ueberzug-git cwm
+
+git clone https://github.com/siduck76/st.git && cd st/ && make install && rm -rf st/ && cd ..
+git clone https://github.com/Stardust-kyun/dmenu && cd dmenu/ && make clean install && rm -rf dmenu/ && cd
+
+gsettings set org.blueman.plugins.powermanager auto-power-on false
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 echo "sex ALL=(ALL) ALL" >> /etc/sudoers.d/sex
 
 echo "if [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]]
@@ -114,13 +124,4 @@ curl -L https://get.oh-my.fish | fish
 # omf install archlinux bang-bang cd colorman sudope vcs bass pure
 # echo "source /root/.local/share/omf/pkg/colorman/init.fish" >> /home/sex/.config/fish/config.fish
 
-# add bullshit
-pacman -S aura thinkfan gtk3-nocsd-git polybar gksu octopi
-aura -Ay upd72020x-fw wd719x-firmware aic94xx-firmware libxft-bgra rxvt-unicode-truecolor-wide-glyphs i3lock-color-git lightdm-webkit2-theme-glorious python-ueberzug-git cwm
-
-git clone https://github.com/siduck76/st.git && cd st/ && make install && rm -rf st/ && cd ..
-git clone https://github.com/Stardust-kyun/dmenu && cd dmenu/ && make clean install && rm -rf dmenu/ && cd
-
-gsettings set org.blueman.plugins.powermanager auto-power-on false
-# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 printf "\e[1;32mDone! Type exit, umount -a and reboot, post installation u need to config fish, lightdm/xinit, and wm .\e[0m"
