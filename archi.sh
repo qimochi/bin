@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 loadkeys us
 timedatectl set-ntp true
