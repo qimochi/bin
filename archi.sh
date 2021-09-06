@@ -116,7 +116,7 @@ curl -L https://get.oh-my.fish | fish
 # echo "source /root/.local/share/omf/pkg/colorman/init.fish" >> /home/sex/.config/fish/config.fish
 
 # add bullshit
-pacman -S aura
-aura -Ay upd72020x-fw wd719x-firmware aic94xx-firmware aura-git libxft-bgra rxvt-unicode-truecolor-wide-glyphs thinkfan gtk3-nocsd-git
+pacman -S aura thinkfan gtk3-nocsd-git
+aura -Ay upd72020x-fw wd719x-firmware aic94xx-firmware aura-git libxft-bgra rxvt-unicode-truecolor-wide-glyphs
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot, post installation u need to config fish, lightdm/xinit, and wm .\e[0m"
