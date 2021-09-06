@@ -9,6 +9,9 @@ timedatectl set-ntp true
 #base
 pacstrap /mnt base base-devel linux-lts linux-firmware
 
+#fstab
+genfstab -U /mnt >> /mnt/etc/fstab
+
 #chroot
 arch-chroot /mnt /bin/bash
 
