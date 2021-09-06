@@ -116,8 +116,8 @@ omf install archlinux bang-bang cd colorman sudope vcs bass pure
 echo "source /home/sex/.local/share/omf/pkg/colorman/init.fish" >> /home/sex/.config/fish/config.fish
 
 # add bullshit
-git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin/ && makepkg -sri && rm -rf yay-bin/ && cd ..
-yay -S upd72020x-fw wd719x-firmware aic94xx-firmware aura-git libxft-bgra rxvt-unicode-truecolor-wide-glyphs thinkfan --removemake
-aura -Sy gtk3-nocsd-git
+git clone https://aur.archlinux.org/aura-bin.git && cd aura-bin/ && makepkg && rm -rf aura-bin/ && cd ..
+aura -Ay upd72020x-fw wd719x-firmware aic94xx-firmware aura-git libxft-bgra rxvt-unicode-truecolor-wide-glyphs thinkfan --removemake
+aura -Ay gtk3-nocsd-git
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
