@@ -28,7 +28,7 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:password | chpasswd
 
-pacman -S grub efibootmgr arandr fish ffmpeg tumbler imagemagick maim htop thunar pkgfile ncmpcpp mpd mpc mpv neofetch polkit-gnome gnome-keyring noto-fonts-cjk noto-fonts-emoji ttf-font-awesome awesome-terminal-fonts playerctl scrot dunst pacman-contrib light-locker lightdm bspwm sxhkd firefox rxvt-unicode picom nitrogen lxappearance dmenu mtpfs git less intel-ucode android-udev networkmanager man-pages man-db network-manager-applet dialog wpa_supplicant mtools dosfstools reflector avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh rsync reflector acpi acpi_call tlp ufw blueman flatpak sof-firmware acpid os-prober ntfs-3g terminus-font vim ranger w3m
+pacman -S grub efibootmgr arandr fish ffmpeg tumbler imagemagick maim htop thunar pkgfile ncmpcpp mpd mpc mpv neofetch polkit-gnome gnome-keyring inter-font ttf-roboto noto-fonts-cjk noto-fonts-emoji ttf-font-awesome awesome-terminal-fonts playerctl scrot dunst pacman-contrib light-locker lightdm bspwm sxhkd firefox picom nitrogen lxappearance dmenu mtpfs git less intel-ucode android-udev networkmanager man-pages man-db network-manager-applet dialog wpa_supplicant mtools dosfstools reflector avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh rsync reflector acpi acpi_call tlp ufw blueman flatpak sof-firmware acpid os-prober ntfs-3g terminus-font vim ranger w3m cmake macchanger 
 
 # add chaotic
 pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
@@ -102,7 +102,7 @@ echo "<?xml version="1.0"?>
 
 useradd -m sex -s /bin/bash
 echo sex:password | chpasswd
-usermod -aG libvirt,storage,video,wheel,audio,input,power sex 
+usermod -aG libvirt,storage,video,wheel,audio,input,power,rfkill sex 
 
 echo "sex ALL=(ALL) ALL" >> /etc/sudoers.d/sex
 
@@ -116,7 +116,12 @@ curl -L https://get.oh-my.fish | fish
 # echo "source /root/.local/share/omf/pkg/colorman/init.fish" >> /home/sex/.config/fish/config.fish
 
 # add bullshit
-pacman -S aura thinkfan gtk3-nocsd-git
-aura -Ay upd72020x-fw wd719x-firmware aic94xx-firmware aura-git libxft-bgra rxvt-unicode-truecolor-wide-glyphs
+pacman -S aura thinkfan gtk3-nocsd-git polybar gksu octopi
+aura -Ay upd72020x-fw wd719x-firmware aic94xx-firmware libxft-bgra rxvt-unicode-truecolor-wide-glyphs i3lock-color-git lightdm-webkit2-theme-glorious python-ueberzug-git cwm
 
+git clone https://github.com/siduck76/st.git && cd st/ && make install && rm -rf st/ && cd ..
+git clone https://github.com/Stardust-kyun/dmenu && cd dmenu/ && make clean install && rm -rf dmenu/ && cd
+
+gsettings set org.blueman.plugins.powermanager auto-power-on false
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 printf "\e[1;32mDone! Type exit, umount -a and reboot, post installation u need to config fish, lightdm/xinit, and wm .\e[0m"
