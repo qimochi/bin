@@ -101,7 +101,7 @@ echo "<?xml version="1.0"?>
 
 useradd -m sex -s /bin/bash
 echo sex:password | chpasswd
-usermod -aG libvirt,storage,video,wheel,audio,input,power,rfkill sex 
+usermod -aG storage,video,wheel,audio,input,power,rfkill sex 
 
 echo "sex ALL=(ALL) ALL" >> /etc/sudoers.d/sex
 
