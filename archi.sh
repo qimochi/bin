@@ -27,13 +27,11 @@ echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 
-# for adsblock https://github.com/StevenBlack/hosts
-
 echo root:password | chpasswd
 
 # default password is password
 
-pacman -S grub efibootmgr arandr fish ffmpeg tumbler imagemagick maim htop thunar pkgfile ncmpcpp mpd mpc mpv neofetch polkit-gnome gnome-keyring inter-font ttf-roboto noto-fonts-cjk noto-fonts-emoji ttf-font-awesome awesome-terminal-fonts playerctl scrot dunst pacman-contrib light-locker lightdm bspwm sxhkd firefox picom nitrogen lxappearance dmenu mtpfs git less intel-ucode android-udev networkmanager man-pages man-db network-manager-applet dialog wpa_supplicant mtools dosfstools reflector avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh rsync reflector acpi acpi_call tlp ufw blueman flatpak sof-firmware acpid os-prober ntfs-3g terminus-font vim ranger w3m cmake macchanger gucharmap
+pacman -S grub efibootmgr arandr fish ffmpeg tumbler imagemagick maim htop thunar pkgfile ncmpcpp mpd mpc mpv neofetch polkit-gnome gnome-keyring inter-font ttf-roboto noto-fonts-cjk noto-fonts-emoji ttf-font-awesome awesome-terminal-fonts playerctl scrot dunst pacman-contrib light-locker lightdm bspwm sxhkd firefox picom nitrogen lxappearance dmenu mtpfs git less intel-ucode android-udev networkmanager man-pages man-db network-manager-applet dialog wpa_supplicant mtools dosfstools reflector avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh rsync reflector acpi acpi_call tlp ufw blueman flatpak sof-firmware acpid os-prober ntfs-3g terminus-font vim ranger w3m cmake macchanger gucharmap cronie xorg-xrandr
 
 # add chaotic & other repos
 pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
@@ -142,3 +140,5 @@ printf "\e[1;32mDone! Type exit, umount -a and reboot, post installation u need 
 # curl -L https://get.oh-my.fish | fish
 # omf install archlinux bang-bang cd colorman sudope vcs bass pure
 # echo "source /home/sex/.local/share/omf/pkg/colorman/init.fish" >> /home/sex/.config/fish/config.fish
+# for adsblock https://github.com/StevenBlack/hosts
+# sudo systemctl restart NetworkManager.service
